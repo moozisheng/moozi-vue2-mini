@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./mvue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 123{{ message }}444 -->
+        <div>
+            {{message}}
+        </div>
+        <input v-model="message" />
+    </div>
+</body>
+<script>
+// 1.把数据渲染到初次视图（基于dom操作）; 深层dom渲染（递归）
+const vm  = new Vue({
+    el:"#app",
+    data:{
+        message:"数111据"
+    }
+})
+// 2.响应式 -->如何知道数据改变？？（数据劫持） --->数据改变如何影响视图？？（观察者模式、发布订阅）
+// console.log(vm._data);
+// setTimeout(() => {
+//     vm._data.message = "修改的数据";
+//     // console.log(vm);
+// }, 1000);
+// 发布订阅  ：更新 1. 需要newValue  2. 编译 ；
+
+// 3.指令v-model 
+// 作业 ：实现一个 v-html 、v-text （有响应式）;
+
+
+</script>
+</html>
